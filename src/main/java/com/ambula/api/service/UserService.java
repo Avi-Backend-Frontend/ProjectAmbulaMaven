@@ -1,0 +1,15 @@
+package com.ambula.api.service;
+
+import java.util.List;
+
+import com.ambula.api.entity.User;
+
+public interface UserService {
+
+	public void createUserTable();
+
+	public void updateUser(User user);
+
+	public List<User> getNearestUsers(int N);
+
+}
