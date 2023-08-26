@@ -64,10 +64,4 @@ public class UserServiceImpl implements UserService {
         return Math.sqrt(latitude * latitude + longitude * longitude);
     }
 
-	@Override
-	public List<User> getNearestUsers() {
-		//To know Overall Data
-		return userRepository.findAll();
-	}
-
 }
