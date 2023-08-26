@@ -20,26 +20,19 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping("/create_data")
-    public ResponseEntity<String> createTable( User user) {
-		User user2 =   userService.createUserTable(user);
+    public ResponseEntity<String> createTable(@RequestBody User user) {
+	User user2 = userService.createUserTable(user);
         return ResponseEntity.ok("Table created successfully." +user2);
     }
-
 	@PostMapping("/update_data")
     public ResponseEntity<String> updateUser(@RequestBody User user) {
         userService.updateUser(user);
         return ResponseEntity.ok("User updated successfully.");
     }
-
 	@GetMapping("/get_users/{N}")
     public ResponseEntity<List<User>> getNearestUsers(@PathVariable int N) {
         List<User> nearestUsers = userService.getNearestUsers(N);
         return ResponseEntity.ok(nearestUsers);
     }
-	@GetMapping("/get_user")
-    public ResponseEntity<List<User>> getNearestUsers() {
-        List<User> nearestUsers = userService.getNearestUsers();
-        return ResponseEntity.ok(nearestUsers);
-    }
-
+	
 }
