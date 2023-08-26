@@ -12,7 +12,4 @@ public interface UserService {
 
 	public List<User> getNearestUsers(int N);
 
-	public List<User> getNearestUsers();
-
-
 }
